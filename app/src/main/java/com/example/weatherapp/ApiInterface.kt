@@ -5,10 +5,10 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ApiInterface {
-    @GET("Weather")
+    @GET("weather")
     fun getweatherdata(
         @Query("q") city: String,
-        @Query("appId") appId: String,
+        @Query("appid") appId: String,
         @Query("units") units: String,
         ) : retrofit2.Call<weatherApp>
 

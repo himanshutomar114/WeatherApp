@@ -65,11 +65,11 @@
 
     <TextView
         android:id="@+id/temp"
-        android:layout_width="105dp"
-        android:layout_height="126dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="67dp"
         android:textColor="@color/black"
-        android:textSize="100sp"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/today" />
 
@@ -133,13 +133,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="141dp"
         android:fontFamily="sans-serif-black"
         android:text="Monday"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.438"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/maxtemp" />
 

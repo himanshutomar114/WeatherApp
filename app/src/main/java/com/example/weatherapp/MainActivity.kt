@@ -21,7 +21,8 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-       fetchWeatherdata("delhi")
+       supportActionBar?.hide()
+        fetchWeatherdata("Delhi")
         searchCity()
         }
 
@@ -70,9 +71,10 @@ class MainActivity : AppCompatActivity() {
                     binding.tvsunrise.text="${time(sunRise)}"
                     binding.tvsunset.text="${time(sunSet)}"
                     binding.tvsea.text="$seaLevel"
+                    binding.Condition.text="$condition"
                     binding.condition.text="$condition"
-                    binding.maxtemp.text="$maxTemp"
-                    binding.mintemp.text="$minTemp"
+                    binding.maxtemp.text="Max: $maxTemp"
+                    binding.mintemp.text="Min: $minTemp"
                     binding.location.text="$cityName"
                     binding.day.text=day(System.currentTimeMillis())
                     binding.date.text=date()
