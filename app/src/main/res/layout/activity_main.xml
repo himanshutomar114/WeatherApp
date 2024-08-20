@@ -13,13 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/searchbar"
         android:iconifiedByDefault="false"
         android:queryHint="Enter a City"
         android:searchIcon="@drawable/searchicon"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -77,8 +78,8 @@
         android:id="@+id/centigrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="212dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginTop="224dp"
+        android:layout_marginEnd="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/centigrade" />
@@ -112,8 +113,8 @@
         android:id="@+id/sc1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="343dp"
-        android:layout_marginEnd="68dp"
+        android:layout_marginTop="298dp"
+        android:layout_marginEnd="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/smallcentigrade" />
@@ -122,8 +123,8 @@
         android:id="@+id/sc2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="365dp"
-        android:layout_marginEnd="68dp"
+        android:layout_marginTop="322dp"
+        android:layout_marginEnd="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/smallcentigrade" />
@@ -278,7 +279,7 @@
                     android:gravity="center" />
 
                 <TextView
-                    android:id="@+id/condition"
+                    android:id="@+id/conditiontv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"

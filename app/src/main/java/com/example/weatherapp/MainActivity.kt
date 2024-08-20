@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         searchView.setOnQueryTextListener(object :android.widget.SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 if (query != null) {
-                    fetchWeatherdata(query)
+                    fetchWeatherdata(query) //query is passed in function which were taken by searchview
                 }
                 return true
             }
@@ -46,8 +46,8 @@ class MainActivity : AppCompatActivity() {
 
 
      private fun fetchWeatherdata(cityName :String) {
-        val retrofit = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
+        val retrofit = Retrofit.Builder()     //retrofit is used to fetch API data
+            .addConverterFactory(GsonConverterFactory.create())    //GSON converter is used to convert data
             .baseUrl("https://api.openweathermap.org/data/2.5/")
             .build().create(ApiInterface::class.java)
         val response = retrofit.getweatherdata("$cityName" , "13dc457e5059ee8ee3c9ab242dd9fdff" , "metric")
@@ -55,6 +55,7 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<weatherApp>, response: Response<weatherApp>) {
                 val responseBody = response.body()
                 if (response.isSuccessful && responseBody != null){
+                    //taking data from API
                     val temperature =responseBody.main.temp.toString()
                     val humidity =responseBody.main.humidity
                     val windSpeed =responseBody.wind.speed
@@ -65,6 +66,7 @@ class MainActivity : AppCompatActivity() {
                     val maxTemp =responseBody.main.temp_max
                     val minTemp =responseBody.main.temp_min
 
+                   //showing data in app
                     binding.temp.text="$temperature"
                     binding.tvhumidity.text="$humidity"
                     binding.tvwindspeed.text="$windSpeed"
@@ -72,7 +74,7 @@ class MainActivity : AppCompatActivity() {
                     binding.tvsunset.text="${time(sunSet)}"
                     binding.tvsea.text="$seaLevel"
                     binding.Condition.text="$condition"
-                    binding.condition.text="$condition"
+                    binding.conditiontv.text="$condition"
                     binding.maxtemp.text="Max: $maxTemp"
                     binding.mintemp.text="Min: $minTemp"
                     binding.location.text="$cityName"
@@ -89,7 +91,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-
+    //changing of background and lottie animation according to condition
     private fun changeackgroundImage(condition: String) {
         when(condition){
             "Partly Clouds","Clouds","Overcast","Mist","Foggy" -> {
@@ -100,7 +102,7 @@ class MainActivity : AppCompatActivity() {
                 binding.root.setBackgroundResource(R.drawable.sunny)
                 binding.lottieAnimationView.setAnimation(R.raw.sunnylottie)
             }
-            "Light Rain","Drizzle","Moderate Rain","Showers","Heavy Rain" -> {
+            "Light Rain","Drizzle","Moderate Rain","Showers","Heavy Rain","Rain" -> {
                 binding.root.setBackgroundResource(R.drawable.rain)
                 binding.lottieAnimationView.setAnimation(R.raw.rainlottie)
             }
