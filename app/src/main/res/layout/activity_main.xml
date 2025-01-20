@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/sunny"
+    android:backgroundTintMode="screen"
     tools:context=".MainActivity">
 
     <SearchView
@@ -31,12 +32,12 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="140dp"
         android:layout_marginEnd="87dp"
-        app:lottie_rawRes="@raw/sunnylottie"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
         app:layout_constraintEnd_toStartOf="@+id/temp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/sunnylottie" />
 
     <TextView
         android:id="@+id/location"
